@@ -2,9 +2,9 @@ global $config;
 $config = parse_config(true);
 
 if (array_key_exists('enable', $config['dhcpd']['lan'])) { 
-    ! echo "DHCPD LAN stays enabled."
+    echo "DHCPD LAN stays enabled.";
 } else { 
-    ! echo "Enabling DHCPD LAN..."
+    echo "Enabling DHCPD LAN...";
     $config['dhcpd']['lan']['enable'] = true;
     write_config("Enabling DHCPD LAN");
     ! killall dhcpd
